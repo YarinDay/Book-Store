@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Book Shop!</title>
+</head>
+
+<body onload="onInit()">
+    <div class="main-page-container">
+        <h1 class="main-title"> Welcome to my book store! let the fun begin!</h1>
+        <h2 class="main-title"> Let the fun begin!</h2>
+        <select class="select" onchange="onSetSortBy(this.value)">
+            <option value="">Select Sorting</option>
+            <option value="MAXPRICE">Max Price To Low</option>
+            <option value="MINRATE">Min Rate To High</option>
+        </select>
+        <table class="table-container">
+
+            <button class="addABook" onclick="onAddBook()">Add</button>
+            <input class="input-book-name" type="text" placeholder="Book's name?"/>
+            <input class="input-book-price" type="text" placeholder="Book's price?"/>
+
+        </table>
+
+    </div>
+    <div class="modal">
+        <h2>Book Name</h2>
+        <h3>Book Price</h3>
+        <div class="rate-the-book">
+            <!-- <button onclick="onDecreaseRate()">-</button>
+            <h5 class="book-rate"></h5>
+            <button onclick="onIncreaseRate()">+</button> -->
+        </div>
+        <button onclick="onCloseModal()">X</button>
+    </div>
+    <div>
+        <button class="paging next" onclick="onPrevPage()">Prev</button>
+        <button class="paging prev" onclick="onNextPage()">Next</button>
+    </div>
+    <div class="user-msg"></div>
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/book.service.js"></script>
+    <script src="js/book.controller.js"></script>
+</body>
+
+</html>
